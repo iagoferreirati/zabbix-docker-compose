@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  api_cep:
+    container_name: "api_cep"
+    build: .
+#    image: "nginx"
+    # volumes:
+    #   - "./site:/usr/share/nginx/html"
+    ports:
+      - "8080:80"
+  
+  cache_redis:
+    container_name: "cache_redis"
+    image: redis
+    ports:
+      - "6379:6379"
